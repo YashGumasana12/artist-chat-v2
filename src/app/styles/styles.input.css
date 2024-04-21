@@ -1,0 +1,64 @@
+:root {
+    --svg-color: rgb(255,74,9);
+    /* --icon-background-color: #fff; */
+    /* --icon-border-color: rgb(91, 107, 255); */
+  }
+  
+
+
+.input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .input {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    z-index: 2;
+    padding: 18px 16px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    font-size: small;
+  }
+  
+  .input::placeholder {
+    color: transparent;
+  }
+  
+  .input:focus::placeholder {
+    color: rgb(131, 128, 128);
+  }
+  
+  .input:focus,.input:not(:placeholder-shown) {
+    background-color: #fff;
+    /* border: 1px solid var(--svg-color); */
+    width: 200px;
+    cursor: none;
+    padding: 18px 16px 18px 45px;
+  }
+    
+  .icon {
+    position: absolute;
+    left: 0;
+    height: 45px;
+    width: 45px;
+    background-color: #fff;
+    border-radius: 99px;
+    z-index: 1; /* Adjusted to a positive value */
+    fill: var(--svg-color);
+    /* border: 1px solid var(--svg-c    olor); */
+    ;
+  }
+  
+  .input:focus + .icon,
+  .input:not(:placeholder-shown) + .icon {
+    z-index: 2; /* Ensure the icon stays above the input */
+    background-color: transparent;
+    border: none;
+  }
+  
